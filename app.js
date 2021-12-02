@@ -1,5 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+// require date.js - this has getDate and getDay functions
+const date = require(__dirname + '/date.js');
 const app = express();
 
 let items = ['Sample item'];
@@ -16,21 +18,11 @@ app.use(express.static('public'));
 
 
 app.get('/', function(req, res){
-    
-    
-    let today = new Date();
-    let options = {
-        weekday: 'long',
-        day: 'numeric',
-        month: 'long'
-    };
 
-    let day = today.toLocaleString('en-US', options);
+    let day = date.getDay();
 
     // passing kindOfDay marker and giving the value of 'day' variable (ejs)
     res.render('list', {listTitle: day, newListItems: items});
-
-
 
 });
 
