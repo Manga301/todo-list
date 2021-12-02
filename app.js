@@ -44,6 +44,10 @@ app.get('/personal', function(req, res){
     res.render('list', {listTitle: 'Personal List', newListItems: personalItems});
 });
 
+app.get('/about', function(req, res){
+    res.render('about');
+});
+
 app.post('/', function(req, res){
 
     let item = req.body.newItem;
@@ -59,7 +63,8 @@ app.post('/', function(req, res){
         res.redirect('/');
     }
 
-    // console.log(req.body); // this gives us 'Work' uppercase, has to be clear in the if/else, lowercase won't work
+    // this gives us 'Work' uppercase, has to be clear in the if/else, lowercase won't work
+    // console.log(req.body); 
     
 });
 

@@ -18,6 +18,15 @@ h1 {
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
+.box-header{
+  padding: 1px 0 1px 0; /* TLBR */
+}
+
+.box-content{
+  background: #f7f7f76b;
+  padding: 20px;
+}
+
 #heading {
   background-color: #2b2b2b;
   text-align: center;
